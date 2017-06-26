@@ -1,0 +1,8 @@
+
+like.like:
+  path: '/like/form/like'
+  defaults:
+    _form: '\Drupal\like\Form\LikeForm'
+    _title: 'Like'
+  requirements:
+    _access: 'TRUE'

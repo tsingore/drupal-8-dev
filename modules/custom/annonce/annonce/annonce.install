@@ -1,0 +1,22 @@
+<?php
+
+  use \Drupal\Core\Database\Database;
+
+  function annonce_schema() {
+    $schema['annonce_history'] = array(
+      'description' => 'The base table for annonces viewed by users',
+      'fields' => array(
+        'id' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+        'aid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE), //annonce id
+        'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE), // user id
+        'date' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+      ),
+      'primary key' => array('id'),
+      'indexes' => array('aid' => array('aid')),
+    );
+    return $schema;
+  }
+
+  /*function annonce_uninstall() {
+    \Drupal::state()->delete('hello_form_submission_time');
+  }*/

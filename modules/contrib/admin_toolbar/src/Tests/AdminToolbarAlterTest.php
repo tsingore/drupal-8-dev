@@ -21,7 +21,7 @@ class AdminToolbarAlterTest extends WebTestBase {
 
   /**
    * A test user with permission to access the administrative toolbar.
-   *
+   *AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
    * @var \Drupal\user\UserInterface
    */
   protected $adminUser;

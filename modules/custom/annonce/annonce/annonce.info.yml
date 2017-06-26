@@ -1,0 +1,5 @@
+name: Annonce
+type: module
+description: Classifieds management.
+core: 8.x
+package: Training

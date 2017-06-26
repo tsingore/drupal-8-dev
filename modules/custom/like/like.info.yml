@@ -1,0 +1,7 @@
+name: Like
+type: module
+description: Button Like available for liking
+core: 8.x
+package: Custom
+dependencies:
+  - reusable_forms

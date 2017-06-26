@@ -15,6 +15,8 @@
 # Don't show directory listings for URLs which map to a directory.
 Options -Indexes
 
+# Options +FollowSymLinks
+
 # Set the default handler.
 DirectoryIndex index.php index.html index.htm
 

@@ -1,0 +1,15 @@
+#sidebar-first .block.blue-class {
+  background: #3AB2FF;
+}
+
+#sidebar-first .block.yellow-class{
+  background: #a8ff60;
+}
+
+#sidebar-first .block.red-class {
+  background: #aa0000;
+}
+
+#sidebar-second .block.orange-class {
+  background: orange;
+}

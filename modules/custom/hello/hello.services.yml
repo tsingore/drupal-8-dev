@@ -1,0 +1,10 @@
+services:
+  access_check.hello:
+    class: Drupal\hello\Access\HelloAccessCheck
+    tags:
+      - { name: access_check, applies_to: _access_hello }
+
+  route_subscriber.modules_list_page_override:
+    class: Drupal\hello\Routing\HelloRouteSubscriber
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,57 @@
+hello.hello:
+  path: '/hello/{param}'
+  defaults:
+    _title: 'Hello'
+    _controller: '\Drupal\hello\Controller\HelloController::content'
+    param: null
+  requirements:
+    _access: 'TRUE'
+
+hello.rss:
+  path: '/hello-rss'
+  defaults:
+    _title: 'Hello'
+    _controller: '\Drupal\hello\Controller\HelloRssController::content'
+  requirements:
+    _access: 'TRUE'
+
+hello.nodeList:
+  path: '/hello-node-list/{nodetype}'
+  defaults:
+    _title: 'Node list'
+    _controller: '\Drupal\hello\Controller\HelloNodeListController::content'
+    nodetype: ''
+  requirements:
+    _access: 'TRUE'
+
+hello.node_history:
+  path: '/node/{node}/history'
+  defaults:
+    _title: 'Node update history'
+    _controller: '\Drupal\hello\Controller\HelloNodeHistoryController::content'
+  requirements:
+    _access: 'TRUE'
+
+hello.calculator:
+  path: '/form-calculator'
+  defaults:
+    _title: 'Calculator'
+    _form: '\Drupal\hello\Form\CalculatorForm'
+  requirements:
+    _permission: 'access hello'
+
+hello.admin_block_color_form:
+  path: '/admin/appearance/block-color-config'
+  defaults:
+    _title: 'Block Color Config'
+    _form: '\Drupal\hello\Form\HelloBlockColorConfigForm'
+  requirements:
+    _permission: 'administer hello'
+
+hello.access:
+  path: '/hello-access'
+  defaults:
+    _controller: \Drupal\hello\Controller\HelloAccessController::content
+    _title: 'Hello access'
+  requirements:
+    _access_hello: '48'

@@ -1,0 +1,41 @@
+<?php
+
+  use \Drupal\Core\Database\Database;
+
+  function hello_schema() {
+    $schema['hello_node_history'] = array(
+      'description' => 'The base table for Hello nodes history',
+      'fields' => array(
+        'hid' => array('type' => 'serial', 'unsigned' => TRUE, 'not null' => TRUE),
+        'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+        'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'length' => 10),
+        'update_time' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE),
+      ),
+      'primary key' => array('hid'),
+      'indexes' => array('nid' => array('nid')),
+    );
+    return $schema;
+  }
+
+  /**
+   * Implements hook_update_N().
+   */
+  /**
+   * Add a 'uid' field to the hello_node_history table.
+   */
+  function hello_update_8301() {
+    $field_spec = array(
+      'type' => 'int',
+      'description' => "Store user ID.",
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'length' => 10,
+    );
+    //$schema = \Drupal::service('database')->schema();
+    $schema = Database::getConnection()->schema();
+    $schema->addField('hello_node_history', 'uid', $field_spec);
+  }
+
+  function hello_uninstall() {
+    \Drupal::state()->delete('hello_form_submission_time');
+  }

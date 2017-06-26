@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains boum.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements boum_help().
+ */
+function boum_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the like module.
+    case 'help.page.like':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Button Like available for liking') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+//function boum_node_update(NodeInterface $node) {
+  /*$database = \Drupal::database();
+
+  $nb = $database->select('nb', 'nb')
+    ->fields('nb', array('nb'))
+    ->condition('nid', $node->id())
+    ->execute();*/
+//}

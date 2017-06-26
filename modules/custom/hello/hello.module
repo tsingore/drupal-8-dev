@@ -1,0 +1,75 @@
+<?php
+
+function hello_Cron(){
+  drupal_set_message(t('Hello module cron task done.'), 'warning');
+}
+
+function hello_user_login($account) {
+  drupal_set_message(t('Welcome dear %name!', array('%name' => $account->getAccountName())));
+}
+
+use \Drupal\Node\NodeInterface;
+use Drupal\Core\Datetime\DateTimeInterface;
+
+function hello_node_update(NodeInterface $node){
+  //$user = \Drupal::curentUser();
+  $database = \Drupal::database();
+  $database->insert('hello_node_history')
+           ->fields(array(
+                      'nid' => $node->id(),
+                      'update_time' => $node->getChangedTime(), //REQUEST_TIME or time()
+                      'uid' => $node->getRevisionUserId() //$user->id()
+                      )
+                    )
+            ->execute();
+}
+
+function hello_preprocess_block(array &$variables) {
+  $class = \Drupal::config('hello.config')->get('color');
+  $variables['attributes']['class'][] = $class;
+}
+
+function hello_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'hello/hello';
+}
+
+function hello_theme($existing, $type, $theme, $path) {
+  return array(
+              'hello_node_history' => array(
+                'template' => 'hello-node-history',
+                'variables' => array(
+                  'node' => NULL,
+                  'count' => NULL,
+                ),
+              ),
+            );
+}
+
+function hello_form_contact_message_feedback_form_alter(&$form, Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['telephone'] = array(
+    '#type' => 'tel',
+    '#title' => t('Telephone'),
+    '#required' => TRUE,
+  );
+
+  $form['actions']['submit']['#value'] = t('Send message now !');
+
+  $form['name']['#weight'] = 100;
+  $form['mail']['#weight'] = 200;
+  $form['telephone']['#weight'] = 300;
+  $form['message']['#weight'] = 400;
+  $form['actions']['#weight'] = 500;
+
+  unset($form['#process']);
+
+  $form['subject'] = array(
+    '#access' => FALSE,
+  );
+
+}
+
+function hello_mail_alter(&$message) {
+  if($message['id'] == 'contact_page_mail') {
+    $message['body'][] = $message['params']['phone_number'];
+  }
+}

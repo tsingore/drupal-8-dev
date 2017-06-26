@@ -1,0 +1,22 @@
+<?php
+
+use \Drupal\Core\Database\Database;
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Like module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function like_schema() {
+  $schema['boum'] = array(
+    'fields' => array(
+      'lid' => array('type' => 'serial'),
+    ),
+    'primary key' =>array('lid' => array('lid')),
+  );
+
+  return $schema;
+}

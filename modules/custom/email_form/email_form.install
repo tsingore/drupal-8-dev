@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Email Form module.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function email_form_schema() {
+  $schema['email_form'] = array(
+    'description' => 'Stores email address per node.',
+    'fields' => array(
+      'eid' => array(
+        'description' => 'Email/node ID.',
+        'type' => 'serial',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'nid' => array(
+        'description' => 'Node ID.',
+        'type' => 'int',
+        'length' => 10,
+        'not null' => TRUE,
+      ),
+      'email' => array(
+        'description' => 'Email address.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+    ),
+    'indexes' => array(
+      'nid' => array('nid'),
+    ),
+    'primary key' => array('eid'),
+  );
+
+  return $schema;
+}

@@ -1,0 +1,20 @@
+hello.hello:
+  route_name: hello.hello
+  base_route: hello.hello
+  title: 'Hi !'
+
+hello.calculator:
+  route_name: hello.hello
+  base_route: hello.hello
+  title: 'Calculator'
+
+hello.node.node_history:
+  route_name: hello.node_history
+  base_route: entity.node.canonical
+  title: Update history
+  weight: 5
+
+hello.admin.appearance.block_color:
+  title: Block color
+  route_name: hello.admin_block_color_form
+  base_route: system.themes_page

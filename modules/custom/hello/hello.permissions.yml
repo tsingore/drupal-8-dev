@@ -1,0 +1,7 @@
+access hello:
+  title: 'Access Hello'
+  description: 'Permission related to hello'
+
+administer hello:
+  title: 'Administer Hello'
+  description: 'Permission related to administer hello'

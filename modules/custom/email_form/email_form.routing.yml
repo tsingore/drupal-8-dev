@@ -1,0 +1,8 @@
+
+email_form.email_form:
+  path: '/email-form'
+  defaults:
+    _form: '\Drupal\email_form\Form\EmailFormForm'
+    _title: 'Email Form'
+  requirements:
+    _access: 'TRUE'

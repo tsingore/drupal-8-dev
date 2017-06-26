@@ -1,0 +1,8 @@
+name: Email form
+description: "Add an email form to node entity."
+type: module
+core: 8.x
+version: 8.x-1.0
+package: Training
+dependencies:
+  - reusable_forms
