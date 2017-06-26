@@ -1,0 +1,36 @@
+uuid: eb9ce5c4-ed24-41f9-92c7-82201d07538b
+langcode: en
+status: true
+dependencies:
+  module:
+    - annonce
+    - hello
+    - user
+  theme:
+    - bartik
+id: hellocount
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: hello_count_block
+settings:
+  id: hello_count_block
+  label: 'Hello count'
+  provider: hello
+  label_display: visible
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      administrator: administrator
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  annonce_date2:
+    id: annonce_date2
+    module: null
+    negate: false
+    context_mapping: {  }
+    beginning_date: ''
+    ending_date: '2017-06-17'

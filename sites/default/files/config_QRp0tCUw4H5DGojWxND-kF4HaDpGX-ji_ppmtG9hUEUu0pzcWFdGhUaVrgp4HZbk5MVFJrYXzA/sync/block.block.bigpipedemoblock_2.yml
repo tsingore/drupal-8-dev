@@ -1,0 +1,25 @@
+uuid: f1ae67de-ef1b-4bae-afff-b0c9a80856df
+langcode: en
+status: true
+dependencies:
+  module:
+    - big_pipe_demo
+  theme:
+    - bartik
+_core:
+  default_config_hash: K1THps-BZWacD2XQAcr3-ydjva6tL8-BVbXPfgUriNk
+id: bigpipedemoblock_2
+theme: bartik
+region: sidebar_first
+weight: 101
+provider: null
+plugin: big_pipe_demo_block
+settings:
+  id: '2'
+  label: 'BigPipe Demo block #2'
+  provider: big_pipe_demo
+  label_display: visible
+  default_duration: '1000'
+  expose_geeky_details: true
+  html: '<p>Hello world!</p>'
+visibility: {  }

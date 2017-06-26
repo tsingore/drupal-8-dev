@@ -1,0 +1,28 @@
+uuid: 3a72aea7-9419-4a38-9f6c-fdbafecd80d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - annonce
+    - hello
+  theme:
+    - bartik
+id: hello
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: hello_block
+settings:
+  id: hello_block
+  label: Hello!
+  provider: hello
+  label_display: visible
+visibility:
+  annonce_date2:
+    id: annonce_date2
+    module: null
+    negate: false
+    context_mapping: {  }
+    beginning_date: '2107-06-15'
+    ending_date: '2017-06-16'

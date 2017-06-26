@@ -1,0 +1,22 @@
+uuid: 77c2478a-212e-4ad7-a398-9669e9996243
+langcode: en
+status: true
+dependencies:
+  module:
+    - big_pipe_demo
+  theme:
+    - bartik
+_core:
+  default_config_hash: OlG2bv2zwzdq6Glj_6VKiplz84Ca06_YbodY1mNu4sc
+id: bigpipeanonymoussessionblock
+theme: bartik
+region: sidebar_first
+weight: -100
+provider: null
+plugin: big_pipe_anon_session_block
+settings:
+  id: big_pipe_anon_session_block
+  label: 'BigPipe anonymous session block'
+  provider: big_pipe_demo
+  label_display: '0'
+visibility: {  }
