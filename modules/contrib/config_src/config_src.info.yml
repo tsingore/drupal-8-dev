@@ -1,0 +1,11 @@
+name: Configuration Source
+type: module
+description: 'Improves configuration synchronization UI with source selection and single import.'
+package: Configuration
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2016-02-15
+version: '8.x-1.0'
+core: '8.x'
+project: 'config_src'
+datestamp: 1455541900
