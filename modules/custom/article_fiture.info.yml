@@ -1,0 +1,20 @@
+name: 'Article fiture'
+description: 'Features for articles'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - comment
+  - field
+  - hello
+  - image
+  - language
+  - menu_ui
+  - node
+  - path
+  - rdf
+  - reusable_forms
+  - system
+  - text
+  - user
+  - views

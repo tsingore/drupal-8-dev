@@ -1,0 +1,12 @@
+name: 'Basic page fiture'
+description: 'Provides Basic page content type and related configuration. Use <em>basic pages</em> for your static content, such as an ''About us'' page.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - file
+  - node
+  - path
+  - rdf
+  - text
+  - user

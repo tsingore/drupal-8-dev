@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - hello
+  theme:
+    - bartik
+id: hellolastthreearticle
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: hello_last_three
+settings:
+  id: hello_last_three
+  label: 'Hello Last Three Article'
+  provider: hello
+  label_display: visible
+visibility: {  }
